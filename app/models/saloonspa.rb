@@ -2,6 +2,9 @@ class Saloonspa < ApplicationRecord
   belongs_to :user
   has_many :appointments, dependent: :destroy 
   has_many :clients, through: :appointments
+  has_many :services
+  has_many :businesses
+  has_many :worktimes
 
   validates :name, presence: true
   validates :address, presence: true

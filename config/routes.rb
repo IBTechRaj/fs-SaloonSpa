@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'saloonspas/index'
+  get '/saloonspas', to: 'saloonspas#index'
+  get 'saloonspas/show'
  devise_for :users,
              controllers: {
                  sessions: 'users/sessions',
