@@ -2,12 +2,11 @@ class SaloonspasController < ApplicationController
   def index
     @spas = Saloonspa.all
     render json:  @spas 
-    # json_response(@spas)
   end
 
   def show
     @spa=Saloonspa.find(params[:id])
-    
+    render json: @spa
   end
 
   private
