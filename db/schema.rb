@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_052656) do
+ActiveRecord::Schema.define(version: 2021_10_12_050108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "apptdate"
-    t.string "service"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "appttime"
-    t.string "saloonspa"
+    t.bigint "client_id", null: false
+    t.bigint "saloonspa_id", null: false
+    t.string "service"
+    t.index ["client_id"], name: "index_appointments_on_client_id"
+    t.index ["saloonspa_id"], name: "index_appointments_on_saloonspa_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_052656) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.integer "mobile"
+    t.string "mobile"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,6 +103,8 @@ ActiveRecord::Schema.define(version: 2021_10_08_052656) do
     t.index ["saloonspa_id"], name: "index_worktimes_on_saloonspa_id"
   end
 
+  add_foreign_key "appointments", "clients"
+  add_foreign_key "appointments", "saloonspas"
   add_foreign_key "appointments", "users"
   add_foreign_key "businesses", "saloonspas"
   add_foreign_key "clients", "users"
