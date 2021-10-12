@@ -6,12 +6,20 @@ class SaloonspasController < ApplicationController
 
   def show
     @spa=Saloonspa.find(params[:id])
-    render json: @spa
+    @appointments=Appointment.where(saloonspa_id: @spa.id)
+    render json: @appointments
+  end
+
+  def new
+  end
+
+  def create
   end
 
   private
 
-  def params
-    params.require(:saloonspa).permit(:name, :address, :pincode, :gstin, :pan, :chairs)
+  def saloonspa_params
+    params.require(:saloonspa).permit( :name, :address, :pincode, :gstin, :pan, :chairs)
   end
 end
+

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # get 'saloonspas/index'
   resources :appointments
+  # resources :saloonspas
   get '/saloonspas', to: 'saloonspas#index'
-  get 'saloonspas/show'
+  get '/saloonspas/:id', to: 'saloonspas#show'
+
  devise_for :users,
              controllers: {
                  sessions: 'users/sessions',

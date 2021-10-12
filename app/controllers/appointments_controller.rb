@@ -5,6 +5,11 @@ class AppointmentsController < ApplicationController
     render json: @appointments
   end
 
+  def show
+    @appointment=Appointment.find(params[:id])
+    render json: @appointment
+  end
+
   def new
     @appointment = Appointment.new(:appt_params)
   end
