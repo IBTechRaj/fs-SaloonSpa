@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # get 'saloonspas/index'
+  resources :appointments
   get '/saloonspas', to: 'saloonspas#index'
   get 'saloonspas/show'
  devise_for :users,
