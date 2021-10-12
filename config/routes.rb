@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # resources :saloonspas
   get '/saloonspas', to: 'saloonspas#index'
   get '/saloonspas/:id', to: 'saloonspas#show'
+  get '/services', to: 'services#index'
 
  devise_for :users,
              controllers: {

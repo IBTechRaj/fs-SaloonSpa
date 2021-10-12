@@ -1,7 +1,9 @@
 class SaloonspasController < ApplicationController
   def index
-    @spas = Saloonspa.all
-    render json:  @spas 
+    
+    @spas=Saloonspa.all
+    render json: @spas
+
   end
 
   def show
@@ -10,6 +12,11 @@ class SaloonspasController < ApplicationController
     render json: @appointments
   end
 
+  # def list
+  #   @spa=Saloonspa.find(params[:id])
+  #   @services=Service.where(saloonspa_id: @spa.id)
+  #   render json: @services
+  # end
   def new
   end
 
