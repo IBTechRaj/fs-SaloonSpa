@@ -24,12 +24,6 @@ class AppointmentsController < ApplicationController
       end   
   end
 
-  def update
-  end
-
-  def destroy
-  end
-
   private
 
   def appt_params
