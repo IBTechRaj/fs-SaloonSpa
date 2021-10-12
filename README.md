@@ -3,6 +3,14 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+This project is developed as Interview Task by F22Labs. Main features :
+* Devise
+* JWT
+* JSON API
+* Every API call needs accompanying JSON Bearer Token
+
+# Project Setup
+
 1. Clone this repo
 2. Run bundle install
 3. Run 'rails s'. Once the server is up, pl run the following Curl commands to test.
@@ -34,5 +42,4 @@ curl -XGET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIj
 
 3. Book a service at a business
 
-curl -XPOST http://localhost:3000/appointments -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjM0MDE4MDM4LCJleHAiOjE2MzQwMjE2MzgsImp0aSI6IjZjNTVmNmExLTM3OTMtNDg0OC1iNThmLTZiOWUwOWZkYTExYSJ9.ZWQxW3useqT8obh5GWcABjS73HwC0rn7hBRVjUxyHvY" -d '{ "apptdate": "2021-10-16", "appttime": "10.15", "client_id": "1","saloonspa_id": "1", "service": "HAIR CUT", "user_id": "3" }' 
-
+curl -XPOST http://localhost:3000/appointments -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjM0MDE4MDM4LCJleHAiOjE2MzQwMjE2MzgsImp0aSI6IjZjNTVmNmExLTM3OTMtNDg0OC1iNThmLTZiOWUwOWZkYTExYSJ9.ZWQxW3useqT8obh5GWcABjS73HwC0rn7hBRVjUxyHvY" -d '{ "apptdate": "2021-10-16", "appttime": "10.15", "client_id": "1","sal
