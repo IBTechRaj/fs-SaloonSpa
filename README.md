@@ -44,3 +44,4 @@ curl -XGET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIj
 
 curl -XPOST http://localhost:3000/appointments -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjM0MDE4MDM4LCJleHAiOjE2MzQwMjE2MzgsImp0aSI6IjZjNTVmNmExLTM3OTMtNDg0OC1iNThmLTZiOWUwOWZkYTExYSJ9.ZWQxW3useqT8obh5GWcABjS73HwC0rn7hBRVjUxyHvY" -d '{ "apptdate": "2021-10-16", "appttime": "10.15", "client_id": "1","saloonspa_id": "1", "service": "HAIR CUT", "user_id": "3" }' 
 
+# fs-SaloonSpa
